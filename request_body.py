@@ -13,6 +13,6 @@ class Item(BaseModel):
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.post("/")
+async def create_item(item: Item):
+    return item
